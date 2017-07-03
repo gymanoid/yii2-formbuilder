@@ -4,6 +4,7 @@ namespace meysampg\formbuilder;
 
 use yii\base\Widget;
 use yii\helpers\Inflector;
+use yii\helpers\Json;
 use yii\base\InvalidConfigException;
 
 class FormBuilder extends Widget
@@ -120,7 +121,7 @@ class FormBuilder extends Widget
             ];
         }
 
-        return json_encode($this->options);
+        return Json::encode($this->options);
     }
 
     private function getMessages()
@@ -144,7 +145,7 @@ class FormBuilder extends Widget
 
     private function arrayJsonEncode($options)
     {
-        return json_encode($options);
+        return Json::encode($options);
     }
 
     private function arrayXmlEncode($options, $tag = 'field', $generateHeaderAndFooter = true)
